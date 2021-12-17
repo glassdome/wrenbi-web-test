@@ -30,7 +30,7 @@ html {
   @media (min-width: 50em) {
     html {
       font-size: 75%; } }
-  @media (min-width: 75em) {
+  @media (min-width: 64em) {
     html {
       font-size: 80%; } }
   @media (min-width: 112.5em) {
@@ -39,6 +39,9 @@ html {
 
 body {
   box-sizing: border-box; }
+  @media (min-width: 64em) {
+    body {
+      margin: 3rem; } }
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -49,7 +52,7 @@ body {
   border-bottom: 1px solid darkgray; }
   .header__logo {
     display: flex;
-    height: 4.8rem;
+    height: 4rem;
     align-items: center;
     padding-left: 1rem; }
     .header__logo .logo__icon {
@@ -59,9 +62,9 @@ body {
     .header__logo .logo__text {
       font-size: 1.2rem;
       font-weight: 500;
-      letter-spacing: 3px;
-      margin-bottom: -5px;
-      margin-left: -1px; }
+      letter-spacing: .3rem;
+      margin-bottom: -.5rem;
+      margin-left: -.1rem; }
 
 .footer {
   text-align: center;
@@ -92,7 +95,7 @@ body {
     font-size: 5.6rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 1rem;
     margin: .8rem 0; }
   .hero__subheader {
     font-size: 2.2rem;
@@ -107,23 +110,28 @@ body {
       align-items: flex-end; }
       .hero__text-container {
         width: 65%;
-        padding: 2rem; } }
+        padding: 2rem; }
+      .hero__header {
+        letter-spacing: 1.2rem; } }
 
 .summary {
   text-align: center;
-  padding: 2.4rem 3.2rem 4.8rem; }
+  padding: 5rem 3.2rem; }
   .summary__header {
     font-size: 2.8rem;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 1.6rem; }
   .summary__text {
+    margin: 0 auto;
     font-size: 2rem;
-    line-height: 2.5rem; }
+    line-height: 2.5rem;
+    max-width: 70ch; }
 
 .services {
   display: grid;
   grid-template-areas: 'setup-image' 'setup-text' 'courses-image' 'courses-text' 'partners-image' 'partners-text' 'contact';
+  background-color: #e6e6e6;
   border-top: 1px solid lightgray; }
   @media (min-width: 50em) {
     .services {
@@ -131,6 +139,11 @@ body {
   .services .service__text {
     padding: 2.4rem 3.2rem;
     background-color: #e6e6e6; }
+    @media (min-width: 50em) {
+      .services .service__text {
+        display: flex;
+        flex-direction: column;
+        margin: auto; } }
     .services .service__text .service__header {
       font-size: 2.7rem;
       font-weight: 800;
@@ -138,7 +151,7 @@ body {
       margin-bottom: 1.6rem; }
       @media (min-width: 37.5em) {
         .services .service__text .service__header {
-          font-size: 3rem;
+          font-size: 2.8rem;
           letter-spacing: 2px; } }
     .services .service__text .service__description {
       font-size: 2rem;
@@ -168,6 +181,9 @@ body {
       background: url("../img/setup.webp") no-repeat;
       background-size: cover;
       background-position: center center; }
+      @media (min-width: 50em) {
+        .services .service__image--setup {
+          background-position: left; } }
     .services .service__image--courses {
       grid-area: courses-image;
       background: url("../img/courses.webp") no-repeat;

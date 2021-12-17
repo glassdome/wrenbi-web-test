@@ -25,5 +25,8 @@ html {
 
 body {
   box-sizing: border-box;
+  @include respond(desk) {
+    margin: 3rem;
+  }
 }
 
