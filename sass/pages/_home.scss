@@ -22,7 +22,7 @@
     font-size: 5.6rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 1rem;
     margin: .8rem 0;
   }
   &__subheader {
@@ -46,13 +46,18 @@
       width: 65%;
       padding: 2rem;
     }
+    &__header {
+      letter-spacing: 1.2rem;
+    }
   }
+
+
 
 }
 
 .summary {
   text-align: center;
-  padding: 2.4rem $side-padding-small 4.8rem;
+  padding: 5rem $side-padding-small;
   
 
   &__header {
@@ -62,8 +67,10 @@
     margin-bottom: 1.6rem;
   }
   &__text {
+    margin: 0 auto;
     font-size: 2rem;
     line-height: 2.5rem;
+    max-width: 70ch;
   }
 }
 
@@ -85,18 +92,24 @@
     'partners-image partners-text'
     'contact contact';
   }
+  background-color: $black-10;
   border-top: 1px solid lightgray; 
 
   .service__text {
     padding: 2.4rem $side-padding-small;
     background-color: $black-10;
 
+    @include respond(tab-land) {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+    }
     .service__header {
       font-size: 2.7rem;
       font-weight: 800;
 
       @include respond(tab-port) {
-        font-size: 3rem;
+        font-size: 2.8rem;
         letter-spacing: 2px;
       }
       
@@ -138,6 +151,10 @@
       grid-area: setup-image;
       background: url('../img/setup.webp') no-repeat;
       @include bg-cover-center;
+
+      @include respond(tab-land) {
+        background-position: left;
+      }
     }
     &--courses {
       grid-area: courses-image;
