@@ -1,6 +1,6 @@
 .contact__form {
   position: relative;
-  min-height: 60rem;
+  min-height: 50rem;
   width: 100%;
 
   font-size: 1.5rem;
@@ -67,7 +67,8 @@
     font-family: inherit;
     font-size: inherit;
     padding: .8em;
-    border-radius: 4px;      
+    border-radius: 4px;  
+    margin-top: 1rem;    
   }
 
   .contact-submit {

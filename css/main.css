@@ -1,3 +1,20 @@
+/*
+ MEDIA QUERIES
+
+ 0 - 600px    Mobile Phone (phone)
+ 600 - 900    Tablet Portrait (tab-port)
+ 900 - 1200   Tablet Landscape (tab-land)
+ 1200 - 1800  Desktop (desk)
+ 1800 - [up]  Large Screens (large)
+ */
+/*
+  $breakpoint options
+    - phone
+    - tab-port
+    - tab-land
+    - desk
+    - large
+ */
 *,
 *::before,
 *::after {
@@ -7,6 +24,18 @@
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 37.5em) {
+    html {
+      font-size: 70%; } }
+  @media (min-width: 50em) {
+    html {
+      font-size: 75%; } }
+  @media (min-width: 75em) {
+    html {
+      font-size: 80%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 85%; } }
 
 body {
   box-sizing: border-box; }
@@ -42,7 +71,6 @@ body {
   border-top: 1px solid darkgray; }
 
 .hero {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,8 +95,19 @@ body {
     letter-spacing: 6px;
     margin: .8rem 0; }
   .hero__subheader {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 500; }
+  @media (min-width: 37.5em) {
+    .hero__header {
+      font-size: 6.2rem; }
+    .hero__subheader {
+      font-size: 2.5rem; } }
+  @media (min-width: 50em) {
+    .hero {
+      align-items: flex-end; }
+      .hero__text-container {
+        width: 65%;
+        padding: 2rem; } }
 
 .summary {
   text-align: center;
@@ -86,6 +125,9 @@ body {
   display: grid;
   grid-template-areas: 'setup-image' 'setup-text' 'courses-image' 'courses-text' 'partners-image' 'partners-text' 'contact';
   border-top: 1px solid lightgray; }
+  @media (min-width: 50em) {
+    .services {
+      grid-template-areas: 'setup-image setup-text' 'courses-text courses-image' 'partners-image partners-text' 'contact contact'; } }
   .services .service__text {
     padding: 2.4rem 3.2rem;
     background-color: #e6e6e6; }
@@ -94,6 +136,10 @@ body {
       font-weight: 800;
       text-transform: uppercase;
       margin-bottom: 1.6rem; }
+      @media (min-width: 37.5em) {
+        .services .service__text .service__header {
+          font-size: 3rem;
+          letter-spacing: 2px; } }
     .services .service__text .service__description {
       font-size: 2rem;
       font-weight: 500;
@@ -114,6 +160,9 @@ body {
     min-width: 32rem;
     min-height: 32rem;
     filter: grayscale(100%); }
+    @media (min-width: 37.5em) {
+      .services .service__image {
+        min-height: 40rem; } }
     .services .service__image--setup {
       grid-area: setup-image;
       background: url("../img/setup.webp") no-repeat;
@@ -133,21 +182,41 @@ body {
       padding: 2.4rem;
       background-color: #333333;
       filter: graysacale(0); }
+      @media (min-width: 50em) {
+        .services .service__image--partners {
+          background-color: gray; } }
 
 .contact {
   grid-area: contact;
   display: flex;
   flex-direction: column; }
+  @media (min-width: 50em) {
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      border-right: 1px solid lightgray; } }
   .contact__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 8rem 3.2rem;
-    min-height: 32rem;
+    min-height: 20rem;
     background-color: #333333;
     position: relative;
     text-align: center; }
+    .contact__text::before {
+      content: '';
+      background: url("../img/logo-solid-white.svg") no-repeat;
+      background-size: contain;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      right: 10px;
+      bottom: 0;
+      opacity: .10; }
   .contact__header {
     font-size: 3.5rem;
     font-weight: 700;
@@ -189,7 +258,7 @@ hr {
 
 .contact__form {
   position: relative;
-  min-height: 60rem;
+  min-height: 50rem;
   width: 100%;
   font-size: 1.5rem;
   display: flex;
@@ -243,7 +312,8 @@ hr {
     font-family: inherit;
     font-size: inherit;
     padding: .8em;
-    border-radius: 4px; }
+    border-radius: 4px;
+    margin-top: 1rem; }
   .contact__form .contact-submit {
     padding: 1.8em 0;
     border: 3px solid #333333;

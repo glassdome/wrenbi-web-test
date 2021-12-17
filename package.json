@@ -8,7 +8,8 @@
     "start:parcel": "parcel",
     "clean": "rm -rf dist/*",
     "build:parcel": "parcel build --public-url ./",
-    "build": "npm run clean && npm run build:parcel"
+    "build": "npm run clean && npm run build:parcel",
+    "publish": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
