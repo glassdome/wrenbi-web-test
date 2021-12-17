@@ -1,0 +1,11 @@
+@mixin flex-column-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bg-cover-center {
+  background-size: cover;
+  background-position: center center;
+}

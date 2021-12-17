@@ -1,0 +1,165 @@
+.hero {
+  border: 1px solid red;
+
+  @include flex-column-centered;
+
+  min-height: 95vh;
+  background: url('../img/hero.webp') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(100%);
+
+  &__text-container {
+    background: rgba(255,255,255, 0.6);
+    padding: 1.6rem 3rem;
+    border-radius: 4px;
+
+    position: relative;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,.18) 0px 3px 8px;
+    text-align: center;
+  }
+  &__header {
+    font-size: 5.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin: .8rem 0;
+  }
+  &__subheader {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+.summary {
+  text-align: center;
+  padding: 2.4rem $side-padding-small 4.8rem;
+  
+
+  &__header {
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+  }
+  &__text {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.services {
+  display: grid; 
+  grid-template-areas: 
+  'setup-image'
+  'setup-text'
+  'courses-image'
+  'courses-text'
+  'partners-image'
+  'partners-text'
+  'contact';
+  border-top: 1px solid lightgray; 
+
+  .service__text {
+    padding: 2.4rem $side-padding-small;
+    background-color: $black-10;
+
+    .service__header {
+      font-size: 2.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 1.6rem;
+    }
+    .service__description {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 2.6rem;
+      margin-bottom: 1.6rem;
+    }
+    .service__features {
+      font-size: 1.9rem;
+      font-weight: 400;
+      line-height: 2.6rem;
+      padding: 0 2rem;
+    }
+    &--setup {
+      grid-area: setup-text;
+    }
+    &--courses {
+      grid-area: courses-text;
+    }
+    &--partners {
+      grid-area: partners-text;
+    }
+  }
+
+  .service__image {
+    min-width: 32rem;
+    min-height: 32rem;
+
+    filter: grayscale(100%);
+
+    &--setup {
+      grid-area: setup-image;
+      background: url('../img/setup.webp') no-repeat;
+      @include bg-cover-center;
+    }
+    &--courses {
+      grid-area: courses-image;
+      background: url('../img/courses.webp') no-repeat;
+      @include bg-cover-center;
+    }
+    &--partners {
+      grid-area: partners-image;
+      background: url('../img/thinkific.webp') no-repeat;
+      background-origin: content-box;
+      background-size: contain;
+      background-position: center center;
+      
+      padding: 2.4rem;
+      background-color: $black-80;
+      filter: graysacale(0);
+    }
+  }
+}
+
+.contact {
+  grid-area: contact;
+  display: flex;
+  flex-direction: column;
+
+  &__text {
+    @include flex-column-centered;
+    padding: 8rem $side-padding-small;
+    min-height: 32rem;
+    background-color: $black-80;
+    position: relative;
+    text-align: center;
+    &::before {
+
+    }
+  }
+  
+  &__header {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+    margin: 0 0 1.6rem 0;
+  }
+  &__subheader {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: $white;
+    margin-top: 1.6rem;
+  }
+  &__email {
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: yellow;
+    margin-top: 1.6rem;
+    
+  }
+}
