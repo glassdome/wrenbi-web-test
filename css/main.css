@@ -25,18 +25,21 @@ body {
     padding-left: 1rem; }
     .header__logo .logo__icon {
       height: 1.7rem;
-      opacity: .50; }
+      opacity: .50;
+      margin-left: .25rem; }
     .header__logo .logo__text {
       font-size: 1.2rem;
       font-weight: 500;
-      letter-spacing: 3px; }
+      letter-spacing: 3px;
+      margin-bottom: -5px;
+      margin-left: -1px; }
 
 .footer {
   text-align: center;
   font-weight: 500;
   font-size: 1.5rem;
   padding: 1rem;
-  border: 1px solid darkgray; }
+  border-top: 1px solid darkgray; }
 
 .hero {
   border: 1px solid red;
@@ -162,3 +165,91 @@ body {
     font-style: italic;
     color: yellow;
     margin-top: 1.6rem; }
+
+hr {
+  border: 0;
+  height: 2px;
+  width: 10%;
+  position: relative;
+  margin: 1.6rem auto; }
+  hr.center-ball {
+    background: #666666; }
+    hr.center-ball:before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: #666666;
+      display: inline-block;
+      border: 2px solid #666666;
+      border-radius: 50%;
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      margin: 0 0 0 -3px; }
+
+.contact__form {
+  position: relative;
+  min-height: 60rem;
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.2rem; }
+  .contact__form input {
+    height: 100%;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 2px;
+    border: none;
+    outline: none;
+    font-size: inherit; }
+    .contact__form input:focus + label .label-text,
+    .contact__form input:valid + label .label-text {
+      transform: translateY(-140%);
+      font-size: .8em; }
+    .contact__form input:focus + label::after,
+    .contact__form input:valid + label::after {
+      transform: scaleX(1);
+      transform-origin: bottom left; }
+  .contact__form .contact__input {
+    position: relative; }
+    .contact__form .contact__input label {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      border-bottom: 1px solid darkgray; }
+      .contact__form .contact__input label::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-bottom: 3px solid gray;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform .3s ease; }
+    .contact__form .contact__input .label-text {
+      position: absolute;
+      bottom: .32em;
+      left: 0;
+      transition: all .3s ease; }
+  .contact__form .input-message {
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: .8em;
+    border-radius: 4px; }
+  .contact__form .contact-submit {
+    padding: 1.8em 0;
+    border: 3px solid #333333;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 0 auto; }

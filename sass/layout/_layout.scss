@@ -13,11 +13,14 @@
     .logo__icon {
       height: 1.7rem;
       opacity: .50;
+      margin-left: .25rem;
     }
     .logo__text {
       font-size: 1.2rem;
       font-weight: 500;
       letter-spacing: 3px;
+      margin-bottom: -5px;
+      margin-left: -1px;
     }
   }
 }
@@ -28,5 +31,5 @@
   font-size: 1.5rem;
   padding: 1rem;
   
-  border: 1px solid darkgray;
+  border-top: 1px solid darkgray;
 }

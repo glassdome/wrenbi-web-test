@@ -9,3 +9,34 @@
   background-size: cover;
   background-position: center center;
 }
+
+@mixin fullsize {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin hr-ball($color, $width: 10%, ) {
+  border: 0;
+  height: 2px;
+  width: $width;
+  position: relative;
+  margin: 1.6rem auto;
+
+  &.center-ball {
+    background: $color;
+
+    &:before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: $color;
+      display: inline-block;
+      border: 2px solid $color;
+      border-radius: 50%;
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      margin: 0 0 0 -3px; 
+    }
+  }
+}

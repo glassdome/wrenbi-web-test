@@ -1,0 +1,83 @@
+.contact__form {
+  position: relative;
+  min-height: 60rem;
+  width: 100%;
+
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.2rem;
+
+  & input {
+    @include fullsize;
+    padding-top: 1em;
+    padding-bottom: 2px;
+    border: none;
+    outline: none;
+    font-size: inherit;
+
+    &:focus + label .label-text,
+    &:valid + label .label-text {
+      transform: translateY(-140%);
+      font-size: .8em;
+    }
+
+    &:focus + label::after,
+    &:valid + label::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  .contact__input {
+    position: relative;
+
+    & label {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      @include fullsize;
+      pointer-events: none;
+      border-bottom: 1px solid darkgray;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        @include fullsize;
+        border-bottom: 3px solid $black-50;
+
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform .3s ease;
+      }
+    }
+
+    .label-text {
+      position: absolute;
+      bottom: .32em;
+      left: 0;
+      transition: all .3s ease;
+    }
+  }
+  .input-message {
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: .8em;
+    border-radius: 4px;      
+  }
+
+  .contact-submit {
+    padding: 1.8em 0;
+    border: 3px solid $black-80;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 0 auto;
+  }  
+}
