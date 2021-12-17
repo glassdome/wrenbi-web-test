@@ -1,5 +1,4 @@
 .hero {
-  border: 1px solid red;
 
   @include flex-column-centered;
 
@@ -27,9 +26,28 @@
     margin: .8rem 0;
   }
   &__subheader {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 500;
   }
+
+  @include respond(tab-port) {
+    &__header {
+       font-size: 6.2rem;
+    }
+    &__subheader {
+      font-size: 2.5rem;
+    }
+  }
+
+  @include respond(tab-land) {
+    align-items: flex-end;
+
+    &__text-container {
+      width: 65%;
+      padding: 2rem;
+    }
+  }
+
 }
 
 .summary {
@@ -59,6 +77,14 @@
   'partners-image'
   'partners-text'
   'contact';
+
+  @include respond(tab-land) {
+    grid-template-areas: 
+    'setup-image setup-text'
+    'courses-text courses-image'
+    'partners-image partners-text'
+    'contact contact';
+  }
   border-top: 1px solid lightgray; 
 
   .service__text {
@@ -68,6 +94,12 @@
     .service__header {
       font-size: 2.7rem;
       font-weight: 800;
+
+      @include respond(tab-port) {
+        font-size: 3rem;
+        letter-spacing: 2px;
+      }
+      
       text-transform: uppercase;
       margin-bottom: 1.6rem;
     }
@@ -97,7 +129,9 @@
   .service__image {
     min-width: 32rem;
     min-height: 32rem;
-
+    @include respond(tab-port) {
+      min-height: 40rem;
+    }
     filter: grayscale(100%);
 
     &--setup {
@@ -119,6 +153,9 @@
       
       padding: 2.4rem;
       background-color: $black-80;
+      @include respond(tab-land) {
+        background-color: $black-50;
+      }
       filter: graysacale(0);
     }
   }
@@ -128,16 +165,32 @@
   grid-area: contact;
   display: flex;
   flex-direction: column;
+  
+  @include respond(tab-land) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    border-right: 1px solid lightgray;
+  }
 
   &__text {
     @include flex-column-centered;
     padding: 8rem $side-padding-small;
-    min-height: 32rem;
+    min-height: 20rem;
     background-color: $black-80;
     position: relative;
     text-align: center;
     &::before {
-
+      content: '';
+      background: url('../img/logo-solid-white.svg') no-repeat;
+      background-size: contain;
+      background-position: center center;    
+      position: absolute;
+      top: 0;
+      left: 10px;
+      right: 10px;
+      bottom: 0;
+      opacity: .10;
     }
   }
   
