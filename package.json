@@ -2,15 +2,21 @@
   "name": "wrenbi-web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "./index.html",
   "scripts": {
-    "compile:sass": "node-sass -w sass -o css"
+    "compile:sass": "node-sass -w sass -o css",
+    "start:parcel": "parcel",
+    "clean": "rm -rf dist/*",
+    "build:parcel": "parcel build --public-url ./",
+    "build": "npm run clean && npm run build:parcel"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^7.0.0"
+    "gh-pages": "^3.2.3",
+    "node-sass": "^7.0.0",
+    "parcel": "^2.0.1"
   },
   "dependencies": {}
 }
