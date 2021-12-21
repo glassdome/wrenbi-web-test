@@ -2,6 +2,22 @@
 $side-padding-small: 3.2rem;
 
 
+$color-background-light: #F1FAEE;
+
+// $blue-light: #D9EFE8;
+
+
+$blue-light: lighten(#457B9D, 45%);
+$blue-light-200: lighten(#457B9D, 35%);
+$blue-light: #DFFDFF;
+$blue-med: #457B9D;
+$blue-dark: #1D3557;
+
+$red-med: #ec6064;
+
+
+$header-font: 'Montserrat', sans-serif;
+
 // Grayscale
 $white:       #fff;
 $black:       #000;
