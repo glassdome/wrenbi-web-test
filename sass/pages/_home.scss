@@ -6,7 +6,7 @@
   background: url('../img/hero.webp') no-repeat;
   background-size: cover;
   background-position: center center;
-  filter: grayscale(100%);
+  filter: grayscale(30%);
 
   &__text-container {
     background: rgba(255,255,255, 0.6);
@@ -17,17 +17,21 @@
     z-index: 1;
     box-shadow: rgba(0,0,0,.18) 0px 3px 8px;
     text-align: center;
+    transition: all 1s ease;
   }
   &__header {
     font-size: 5.6rem;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1rem;
     margin: .8rem 0;
+    color: $black-60;
+    
   }
   &__subheader {
     font-size: 2.2rem;
     font-weight: 500;
+    letter-spacing: 2px;
   }
 
   @include respond(tab-port) {
@@ -50,21 +54,18 @@
       letter-spacing: 1.2rem;
     }
   }
-
-
-
 }
 
 .summary {
   text-align: center;
   padding: 5rem $side-padding-small;
   
-
   &__header {
     font-size: 2.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 800;
+    color: $blue-dark;
     margin-bottom: 1.6rem;
+    font-family: $header-font;
   }
   &__text {
     margin: 0 auto;
@@ -92,30 +93,32 @@
     'partners-image partners-text'
     'contact contact';
   }
-  background-color: $black-10;
   border-top: 1px solid lightgray; 
+  background-color: $blue-light;
+
 
   .service__text {
-    padding: 2.4rem $side-padding-small;
-    background-color: $black-10;
-
+    padding: 4rem $side-padding-small;
+    
     @include respond(tab-land) {
       display: flex;
       flex-direction: column;
       margin: auto;
     }
+
     .service__header {
-      font-size: 2.7rem;
+      font-size: 3rem;
       font-weight: 800;
+      font-family: $header-font;
+      color: $black-60;
 
       @include respond(tab-port) {
         font-size: 2.8rem;
         letter-spacing: 2px;
       }
-      
-      text-transform: uppercase;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1rem;
     }
+
     .service__description {
       font-size: 2rem;
       font-weight: 500;
@@ -123,6 +126,7 @@
       margin-bottom: 1.6rem;
     }
     .service__features {
+      list-style-type: square;
       font-size: 1.9rem;
       font-weight: 400;
       line-height: 2.6rem;
@@ -142,11 +146,11 @@
   .service__image {
     min-width: 32rem;
     min-height: 32rem;
+
     @include respond(tab-port) {
       min-height: 40rem;
     }
-    filter: grayscale(100%);
-
+    
     &--setup {
       grid-area: setup-image;
       background: url('../img/setup.webp') no-repeat;
@@ -169,11 +173,11 @@
       background-position: center center;
       
       padding: 2.4rem;
-      background-color: $black-80;
+      background-color: $blue-dark;
+      
       @include respond(tab-land) {
-        background-color: $black-50;
+        background-color: $blue-med;
       }
-      filter: graysacale(0);
     }
   }
 }
@@ -194,7 +198,7 @@
     @include flex-column-centered;
     padding: 8rem $side-padding-small;
     min-height: 20rem;
-    background-color: $black-80;
+    background-color: $blue-dark;
     position: relative;
     text-align: center;
     &::before {
@@ -235,5 +239,10 @@
 }
 
 hr {
-  @include hr-ball($black-60);
+  @include hr-ball($red-med);
+}
+
+.wrenbi-tag {
+  color: $red-med;
+  font-weight: 600;
 }
